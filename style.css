@@ -164,7 +164,7 @@ img {
 
 .hero-topbar {
   position: relative;
-  z-index: 2;
+  z-index: 100;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid #e5e5e5;
 }
@@ -227,6 +227,45 @@ img {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
+}
+
+/* ─── Menu Mobile Toggle elements (Hidden on desktop) ─── */
+.menu-checkbox {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1c1c1c;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #1c1c1c;
+  transition: transform 0.2s ease-out;
+}
+
+.hamburger::before {
+  top: -7px;
+}
+
+.hamburger::after {
+  bottom: -7px;
 }
 
 .hero-nav a:hover {
@@ -1137,15 +1176,72 @@ img {
   }
 
   .hero-nav {
-    gap: 14px;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 30px 30px;
+    gap: 16px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 900;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu-checkbox:checked~.menu-button {
+    position: fixed;
+    right: 4vw;
+    top: 18px;
+  }
+
+  .menu-checkbox:checked~.hero-nav {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1), 0 0 0 10000px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Animação do Hamburger */
+  .menu-checkbox:checked~.menu-button .hamburger {
+    background: transparent;
+  }
+
+  .menu-checkbox:checked~.menu-button .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .menu-checkbox:checked~.menu-button .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
   }
 
   .hero-nav a {
-    font-size: 0.8rem;
+    font-size: 1.05rem;
+    padding: 12px 10px;
+    width: 100%;
+    text-align: right;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .hero-nav a:last-child {
+    border-bottom: none;
   }
 
   .hero-nav .nav-contact {
-    padding: 7px 12px;
+    text-align: center;
+    padding: 14px 24px;
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: none;
   }
 
   .hero-content {
@@ -1351,8 +1447,7 @@ img {
 @media (max-width: 620px) {
 
   .brand-full,
-  .brand-divider,
-  .hero-nav a:not(.nav-contact) {
+  .brand-divider {
     display: none;
   }
 

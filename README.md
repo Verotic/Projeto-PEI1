@@ -20,7 +20,7 @@ Na fase de design e conceção visual, utilizámos o **Figma** para criar os moc
 - Garantia de contraste suficiente entre as cores de texto e o fundo.
 - Etiquetagem (labels) explícita e correta nos inputs do formulário.
 - Construção de um layout flexível e com grid/flexbox e media queries, garantindo uma adaptação de ecrãs desktop até aos dispositivos móveis.
-
+- Implementação de um Menu Mobile (Drawer lateral) exclusivo com HTML e CSS (usando a técnica de "Checkbox Hack"), preservando o estado sem dependência de JavaScript, com animações suportadas nativamente pelo browser e comportamento responsivo nos diferentes *breakpoints*.
 ---
 
 ## Benchmarking
