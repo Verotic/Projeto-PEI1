@@ -30,3 +30,38 @@ Na fase de design e conceção visual, utilizámos o **Figma** para criar os moc
 A imagem abaixo ilustra o resultado do benchmark obtido com a implementação final da nossa landing page do CACA:
 
 ![Benchmark do projeto CACA](benchmark.png)
+
+---
+
+# TE1 Project - Azores Academic Clinical Center (CACA) Landing Page
+
+## a) Group Identification
+
+- Adriano Furtado Arruda - 2024111815
+- Nelson Pacheco Ponte - 2024109237
+- David Jorge Repolho Cardoso - 2024108757
+
+## b) Visual Identity
+
+The chosen visual identity focuses on conveying trust and professionalism, using a modern and clean general style adjusted to the clinical-academic environment. Solid and contrasting colors were used along with readable typography to ensure the best on-screen reading experience.
+
+## c) Evolution: Mockup and Implementation
+
+In the design and visual conception phase, we used **Figma** to create detailed mockups of CACA, basing our structural and visual choices on the [Lisbon Academic Clinical Center](https://ccal.pt/). Creating the mockup allowed us to clearly define colors, typography, and spacing. In the final HTML/CSS implementation, we reproduced the mockup, applying improvements in terms of alignment and responsive adjustments that arose during implementation.
+
+## d) Accessibility and Responsiveness
+
+- Systematic use of `alt` attributes on all relevant images.
+- Guarantee of sufficient contrast between text colors and background.
+- Explicit and correct labeling on form inputs.
+- Construction of a flexible layout with grid/flexbox and media queries, ensuring adaptation from desktop screens to mobile devices.
+- Implementation of an exclusive Mobile Menu (Side Drawer) with HTML and CSS (using the "Checkbox Hack" technique), preserving state without JavaScript dependency, with animations natively supported by the browser and responsive behavior across different *breakpoints*.
+---
+
+## Benchmarking
+
+### Benchmark Results (CACA)
+
+The image below illustrates the benchmark result obtained with the final implementation of our CACA landing page:
+
+![CACA project benchmark](benchmark.png)
