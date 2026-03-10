@@ -1,0 +1,31 @@
+Project Task Distribution – CACA Landing Page
+This document presents a proposal for a balanced distribution of tasks among the team members.
+Member 1 – Form and Validation (Puțan Iulia Nicoleta)
+Main responsibility: developing user interaction through a data collection form and implementing client-side validation.
+•	Add a form to the landing page (for example in a 'More Information' or 'Newsletter' section).
+•	Include at least three different fields such as name, email, and message.
+•	Implement JavaScript validation to ensure required fields are completed.
+•	Validate specific formats, such as a correct email address.
+•	Provide visual feedback to the user through error or success messages.
+•	Simulate a successful submission by displaying a confirmation message without sending data to a real server.
+Member 2 – Animations and External Libraries (David Jorge Repolho Cardoso)
+Main responsibility: improving the visual appeal of the website by implementing animations and integrating external libraries.
+•	Implement at least two different animations relevant to the context of the project.
+•	Integrate an external library with a justified purpose, such as:
+•	D3.js for data visualization or research area charts.
+•	Three.js for 3D elements such as a rotating logo.
+•	GSAP for advanced interface animations.
+•	Program triggers for animations, such as page load events or scroll actions.
+Member 3 – Event Management and Interactivity (Adriano Furtado Arruda)
+Main responsibility: implementing interactive features and managing JavaScript events related to navigation and page interaction.
+•	Implement at least three different JavaScript events (excluding form submission).
+•	Possible functionality examples include:
+•	A 'Learn More' button that reveals hidden content.
+•	A navigable image carousel or gallery.
+•	A 'Scroll to Top' button that appears when the user scrolls down the page.
+•	A complex hover effect on interactive elements that requires JavaScript.
+Shared Responsibilities (Entire Team)
+Despite the independent task distribution, some responsibilities must be handled collectively to ensure the quality and consistency of the project.
+•	Accessibility: ensure that all features are usable by different users (for example keyboard navigation in the form or descriptions for dynamic visual elements).
+•	Integration: maintain proper HTML semantics and ensure the design remains responsive.
+•	Documentation: collaboratively write the README.md file, clearly explaining the implemented features and each member’s contribution.
