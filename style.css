@@ -1028,6 +1028,74 @@ img {
   min-height: 110px;
 }
 
+/* Error and input validation states */
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: var(--red);
+  background-color: rgba(211, 74, 67, 0.04);
+}
+
+.form-group.has-error input:focus,
+.form-group.has-error textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(211, 74, 67, 0.15);
+}
+
+.error-message {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--red);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+
+.success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  background-color: rgba(78, 162, 103, 0.08);
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.success-message .success-icon {
+  color: var(--green);
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.success-message h3 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.success-message p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #2d5741;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */

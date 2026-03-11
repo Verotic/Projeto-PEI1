@@ -433,26 +433,39 @@
 
         <div class="contact-form-wrapper">
           <h2>Envie-nos uma mensagem</h2>
-          <form class="contact-form" action="#" method="post">
+          
+          <!-- Mensagem de sucesso -->
+          <div id="success-message" class="success-message" style="display: none;">
+            <span class="success-icon material-symbols-outlined">check_circle</span>
+            <div>
+              <h3>Mensagem enviada com sucesso!</h3>
+              <p>Obrigado por nos contactar. Responderemos à sua mensagem em breve.</p>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="#" method="post" novalidate>
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="O seu nome completo" required />
+              <input type="text" id="nome" name="nome" placeholder="O seu nome completo" />
+              <span class="error-message" id="error-nome"></span>
             </div>
 
             <div class="form-group">
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
+              <input type="email" id="email" name="email" placeholder="exemplo@email.com" />
+              <span class="error-message" id="error-email"></span>
             </div>
 
             <div class="form-group">
               <label for="assunto">Assunto</label>
-              <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required />
+              <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" />
+              <span class="error-message" id="error-assunto"></span>
             </div>
 
             <div class="form-group">
               <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva aqui a sua mensagem..."
-                required></textarea>
+              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva aqui a sua mensagem..."></textarea>
+              <span class="error-message" id="error-mensagem"></span>
             </div>
 
             <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
@@ -503,6 +516,8 @@
       <span class="material-symbols-outlined">arrow_upward</span>
     </button>
   </main>
+  
+  <script src="form-validation.js"></script>
   <script src="script.js"></script>
 </body>
 
