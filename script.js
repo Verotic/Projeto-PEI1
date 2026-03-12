@@ -70,17 +70,30 @@ function initHeroCarousel() {
   if (!carouselContainer) return;
 
   const images = [
-    'assets/images/caca-1.avif',
-    'assets/images/caca-2.avif'
+    'assets/images/caca-1',
+    'assets/images/caca-2'
   ];
 
   // Clear existing images to rebuild
   carouselContainer.innerHTML = '';
   
   // Create image elements
-  images.forEach((src, index) => {
+  images.forEach((baseName, index) => {
     const img = document.createElement('img');
-    img.src = src;
+    // Set src to the largest available original image for fallback
+    img.src = `${baseName}.avif`;
+    
+    // Set srcset for responsive loading
+    img.srcset = `
+      ${baseName}-sm.avif 640w,
+      ${baseName}-md.avif 1024w,
+      ${baseName}-lg.avif 1297w,
+      ${baseName}.avif 2752w
+    `;
+    
+    // Set sizes to 100vw since it covers the full width
+    img.sizes = "100vw";
+    
     img.alt = ""; // Decorative image, hidden from screen readers via container aria-hidden
     if (index === 0) img.classList.add('active');
     carouselContainer.appendChild(img);
