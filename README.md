@@ -85,7 +85,7 @@ Continuamos a garantir as boas práticas de acessibilidade e responsividade:
 
 [Insira aqui a imagem ou descrição dos resultados de benchmark da nova versão, se aplicável]
 
-![Benchmark do projeto CACA - Fase 2](benchmark.png)
+![Benchmark do projeto CACA - Fase 2](benchmark-PI2.png)
 
 ---
 
@@ -167,3 +167,13 @@ We continue to ensure good practices for accessibility and responsiveness:
 - `alt` attributes on images.
 - Adequate contrast.
 - Responsive layout for different devices.
+
+---
+
+## Benchmarking (Phase 2)
+
+### Benchmark Results
+
+[Insert image or description of benchmark results for the new version here, if applicable]
+
+![CACA Project Benchmark - Phase 2](benchmark-PI2.png)
