@@ -29,7 +29,7 @@ Na fase de design e conceção visual, utilizámos o **Figma** para criar os moc
 
 A imagem abaixo ilustra o resultado do benchmark obtido com a implementação final da nossa landing page do CACA:
 
-![Benchmark do projeto CACA](benchmark.png)
+![Benchmark do projeto CACA - Fase 1](benchmark-PI1.png)
 
 ---
 
@@ -64,4 +64,4 @@ In the design and visual conception phase, we used **Figma** to create detailed 
 
 The image below illustrates the benchmark result obtained with the final implementation of our CACA landing page:
 
-![CACA project benchmark](benchmark.png)
+![CACA project benchmark - Fase 1](benchmark-PI1.png)

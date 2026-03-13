@@ -83,7 +83,6 @@ Continuamos a garantir as boas práticas de acessibilidade e responsividade:
 
 ### Resultados do Benchmark
 
-[Insira aqui a imagem ou descrição dos resultados de benchmark da nova versão, se aplicável]
 
 ![Benchmark do projeto CACA - Fase 2](benchmark-PI2.png)
 
@@ -174,6 +173,5 @@ We continue to ensure good practices for accessibility and responsiveness:
 
 ### Benchmark Results
 
-[Insert image or description of benchmark results for the new version here, if applicable]
 
 ![CACA Project Benchmark - Phase 2](benchmark-PI2.png)
