@@ -9,37 +9,60 @@ document.addEventListener('DOMContentLoaded', function() {
   const successMessage = document.getElementById('success-message');
 
   // Email validation regex pattern
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+
+  // Predefined messages for each subject
+  const predefinedMessages = {
+    'investigacao-clinica': 'Gostaria de obter informações sobre oportunidades de envolvimento em investigação clínica. Por favor, forneça detalhes sobre os projetos em curso, requisitos para participação e próximas datas de início.',
+    'formacao-saude': 'Tenho interesse em programas de formação em saúde oferecidos pelo CACA. Gostaria de conhecer os cursos disponíveis, durações, horários e procedimentos de inscrição.',
+    'suporte-investigadores': 'Preciso de suporte como investigador. Gostaria de saber mais sobre os recursos disponíveis, mentoria, financiamento e outros apoios que o CACA oferece aos investigadores.',
+    'plataformas-digitais': 'Tenho dúvidas sobre as plataformas digitais e sistemas de informação do CACA. Por favor, forneça informações sobre acesso, funcionalidades e suporte técnico.',
+    'parcerias': 'Estou interessado em estabelecer parcerias e colaborações com o CACA. Gostaria de discutir oportunidades de cooperação e como podemos trabalhar em conjunto.',
+    'informacoes-gerais': 'Tenho perguntas gerais sobre o CACA. Gostaria de obter mais informações sobre a organização, missão, localização e como entrar em contacto.',
+    'outro': 'Por favor, descreva o seu assunto ou dúvida em detalhe.'
+  };
 
   /**
-   * Clear error message for a field
+   * Clear all error messages for a field
    * @param {HTMLElement} field - The input or text area element
    * @param {string} fieldId - The field identifier (ex 'nome')
    */
   function clearError(field, fieldId) {
     const formGroup = field.parentElement;
-    const errorElement = document.getElementById(`error-${fieldId}`);
+    
+    // Hide all error messages for this field
+    const errorMessages = formGroup.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => msg.style.display = 'none');
     
     formGroup.classList.remove('has-error');
-    if (errorElement) {
-      errorElement.textContent = '';
-    }
   }
 
   /**
-   * Show error message for a field
+   * Show specific error message for a field
    * @param {HTMLElement} field - The input or text area element
    * @param {string} fieldId - The field identifier (ex 'nome')
-   * @param {string} message - The error message to display
+   * @param {string} errorType - The error type (ex 'required', 'format', 'length')
    */
-  function showError(field, fieldId, message) {
+  function showError(field, fieldId, errorType) {
     const formGroup = field.parentElement;
-    const errorElement = document.getElementById(`error-${fieldId}`);
+    
+    // Hide all error messages for this field first
+    const errorMessages = formGroup.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => msg.style.display = 'none');
+    
+    // Show the specific error message
+    let errorElement = document.getElementById(`error-${fieldId}`);
+    if (errorType === 'length') {
+      errorElement = document.getElementById(`error-${fieldId}-length`);
+    } else if (errorType === 'format') {
+      errorElement = document.getElementById(`error-${fieldId}-format`);
+    }
+    
+    if (errorElement) {
+      errorElement.style.display = 'block';
+    }
     
     formGroup.classList.add('has-error');
-    if (errorElement) {
-      errorElement.textContent = message;
-    }
   }
 
   /**
@@ -53,20 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if field is empty
     if (value === '') {
-      const fieldNames = {
-        'nome': 'Nome',
-        'email': 'E-mail',
-        'assunto': 'Assunto',
-        'mensagem': 'Mensagem'
-      };
-      showError(field, fieldId, `${fieldNames[fieldId]} é obrigatório.`);
+      showError(field, fieldId, 'required');
       return false;
     }
 
     // Email-specific validation
     if (fieldId === 'email') {
       if (!emailPattern.test(value)) {
-        showError(field, fieldId, 'Por favor, insira um endereço de e-mail válido.');
+        showError(field, fieldId, 'format');
         return false;
       }
     }
@@ -74,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Name validation (at least 3 characters)
     if (fieldId === 'nome') {
       if (value.length < 3) {
-        showError(field, fieldId, 'Nome deve ter pelo menos 3 caracteres.');
+        showError(field, fieldId, 'length');
         return false;
       }
     }
@@ -146,11 +163,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  assunto.addEventListener('blur', function() {
+  assunto.addEventListener('change', function() {
     validateField(this, 'assunto');
+    
+    // Populate message field with predefined text based on selected subject
+    if (this.value && predefinedMessages[this.value]) {
+      mensagem.value = predefinedMessages[this.value];
+    } else {
+      mensagem.value = '';
+    }
   });
 
-  assunto.addEventListener('input', function() {
+  assunto.addEventListener('blur', function() {
     if (this.parentElement.classList.contains('has-error')) {
       validateField(this, 'assunto');
     }

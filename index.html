@@ -611,25 +611,36 @@
             <div class="form-group">
               <label for="nome">Nome</label>
               <input type="text" id="nome" name="nome" placeholder="O seu nome completo" />
-              <span class="error-message" id="error-nome"></span>
+              <div class="error-message" id="error-nome" data-error-type="required">Nome é obrigatório.</div>
+              <div class="error-message" id="error-nome-length" data-error-type="length">Nome deve ter pelo menos 3 caracteres.</div>
             </div>
 
             <div class="form-group">
               <label for="email">E-mail</label>
               <input type="email" id="email" name="email" placeholder="exemplo@email.com" />
-              <span class="error-message" id="error-email"></span>
+              <div class="error-message" id="error-email" data-error-type="required">E-mail é obrigatório.</div>
+              <div class="error-message" id="error-email-format" data-error-type="format">Por favor, insira um endereço de e-mail válido.</div>
             </div>
 
             <div class="form-group">
               <label for="assunto">Assunto</label>
-              <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" />
-              <span class="error-message" id="error-assunto"></span>
+              <select id="assunto" name="assunto" required>
+                <option value="">Selecione um assunto</option>
+                <option value="investigacao-clinica">Investigação Clínica</option>
+                <option value="formacao-saude">Formação em Saúde</option>
+                <option value="suporte-investigadores">Suporte a Investigadores</option>
+                <option value="plataformas-digitais">Plataformas Digitais e Sistemas</option>
+                <option value="parcerias">Parcerias e Colaborações</option>
+                <option value="informacoes-gerais">Informações Gerais</option>
+                <option value="outro">Outro</option>
+              </select>
+              <div class="error-message" id="error-assunto" data-error-type="required">Assunto é obrigatório.</div>
             </div>
 
             <div class="form-group">
               <label for="mensagem">Mensagem</label>
               <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva aqui a sua mensagem..."></textarea>
-              <span class="error-message" id="error-mensagem"></span>
+              <div class="error-message" id="error-mensagem" data-error-type="required">Mensagem é obrigatória.</div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
